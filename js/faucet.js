@@ -12,7 +12,7 @@ let RPC_URL;
 
 if(window.location.host == 'bitpow.org'){
     CHAIN_ID = '0x208';
-    CHAIN_NAME = 'local';
+    CHAIN_NAME = 'PoW local';
     RPC_URL = 'http://192.168.1.9:9001';
 
     conf = {
@@ -104,19 +104,24 @@ window.addEventListener('load', async () => {
     // const wallet = new ethers.Wallet('0xbbfbee4961061d506ffbb11dfea64eba16355cbf1d9c29613126ba7fec0aed5d', provider2);
 
     const U_abi = [
-        'function mint(uint256,address) public',
+        'function mint(address,uint256) public',
     ];
 
-    // add_contract.addEventListener('click', async (evt) => {
-    //     const to_address = ethereum.selectedAddress;
-    //     const tx = await wallet.sendTransaction({
-    //         to: to_address,
-    //         value: ethers.utils.parseEther("10")
-    //     });
-    //     console.log(tx);
-    //     // await wallet.sendTransaction(tx);
-    //     alert(`U sent to ${to_address}`);
-    // });
+    add_contract.addEventListener('click', async (evt) => {
+        // const to_address = ethereum.selectedAddress;
+        await ethereum.request({
+            method: 'wallet_watchAsset',
+            params: {
+                type: 'ERC20', // Initially only supports ERC20, but eventually more!
+                options: {
+                    address: conf['U'], // The address that the token is at.
+                    symbol: 'U', // A ticker symbol or shorthand, up to 5 chars.
+                    decimals: 0, // The number of decimals in the token
+                    image: '', // A string url of the token logo
+                },
+            },
+        });
+    });
 
     get_u.addEventListener('click', async (evt) => {
         const to_address = ethereum.selectedAddress;
@@ -124,8 +129,8 @@ window.addEventListener('load', async () => {
         console.log(signer);
         const U = new ethers.Contract(conf['U'], U_abi, signer);
 
-        const tx1 = await U['mint(uint256,address)'](ethers.BigNumber.from(10).pow(19), to_address);
-        console.log(tx1);
+        const tx = await U['mint(address,uint256)'](to_address, ethers.BigNumber.from(100));
+        console.log(tx);
         alert(`U sent to ${to_address}`);
     });
 
