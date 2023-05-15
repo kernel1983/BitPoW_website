@@ -3,8 +3,8 @@ import { ethers } from "/dist/ethers-5.6.esm.min.js";
 
 let conf;
 
-const TOKEN_NAME = 'POW';
-const TOKEN_SYMBOL = 'POW';
+const TOKEN_NAME = 'PoW';
+const TOKEN_SYMBOL = 'PoW';
 
 let CHAIN_ID;
 let CHAIN_NAME;
@@ -12,15 +12,15 @@ let RPC_URL;
 
 if(window.location.host == 'bitpow.org'){
     CHAIN_ID = '0x208';
-    CHAIN_NAME = 'PoW local';
-    RPC_URL = 'http://192.168.1.9:9001';
+    CHAIN_NAME = 'PoW testnet';
+    RPC_URL = 'https://bitfile.org';
 
     conf = {
         "U": "0x0000000000000000000000000000000000000001"
     };
 }else{
     CHAIN_ID = '0x208';
-    CHAIN_NAME = 'PoW test';
+    CHAIN_NAME = 'PoW local';
     RPC_URL = 'http://192.168.1.9:9001';
 
     conf = {

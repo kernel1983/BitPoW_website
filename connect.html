@@ -75,11 +75,11 @@
           </div>
 
           <div class="navbar-end">
-            <div class="navbar-item">
+            <div class="navbar-item" style="float: right;">
               <div class="buttons">
-                <!-- <a class="button is-primary">
+                <a class="button is-primary" id="connect_metamask_btn">
                   <strong>Connect</strong>
-                </a> -->
+                </a>
                 <!-- <a class="button is-light">
                   Log in
                 </a> -->
@@ -92,40 +92,19 @@
 
     <section class="section">
       <div class="container">
-        <!-- <img src="/images/coming_soon_animated.gif" style="position:fixed; right: 10px; top:250px; z-index: 5;" /> -->
-
-        <p>We aim to build a blockchain with the first useful PoW.</p>
-        <p>Uniquely, the useful PoW has almost no change to the Nakamoto Consensus.</p>
-        <p>The storage network will replace the native coins as the engine for the computation.</p>
-        <p>The end users will get benifit from the upgraded consensus engine with low gas fee.</p>
-        <br>
-        <p>Meanwhile, sharding solves the capacity issue.</p>
-        <p>Decentralization is the reason we are here.</p>
-        <p>Say goodbye to the mining pools.</p>
-        <br>
-        <p>Let's make PoW great again!</p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h1 class="title" style="color: #fff0ff; z-index: 10; position: relative;">
-          BitPoW
-        </h1>
-        <p class="subtitle" style=" z-index: 10; position: relative;">
-          Testnet Coming Soon
-        </p>
-        <a href="https://discord.gg/u45dV2S8R5"><input value="Learn More" type="button" style="width: 120px; height: 50px; line-height: 40px;
-         background: linear-gradient(127deg, #135EF6 0%, #71FFD6 100%); color: white;  z-index: 10; position: relative;
-          clip-path: polygon( 0 35%, 15% 0, 100% 0, 100% 65%, 85% 100%, 0 100%  ); border: none;" /></a>
-
+        <span id="ethereum_address"></span>
+        <br/>
+        <br/>
+        <div id="messages"></div>
+    
+        <textarea id="content"></textarea>
+        <br/>
+        <span id="content_event_id"></span>
+        <br/>
+        <input type="button" value="Sign" id="content_sig_btn"/>
+        <br/>
       </div>
     </section>
   </body>
-  <script type="module" src="/js/index.js"></script> <!-- ES6 -->
+  <script type="module" src="/js/connect.js"></script> <!-- ES6 -->
 </html>
