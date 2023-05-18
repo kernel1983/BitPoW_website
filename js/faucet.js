@@ -22,6 +22,20 @@ if(window.location.host == 'bitpow.org'){
     RPC_URL = 'http://192.168.1.9:9001';
 }
 
+function help_extension(){
+    var s = document.getElementById('help_extension').style;
+    s.opacity = 0;
+    s.display = "block";
+    // s.width = '0%';
+    (function fade(){
+        console.log(s.opacity);
+        if (s.opacity < 1.0){
+            s.opacity = parseFloat(s.opacity) + 0.1;
+            // s.width = parseInt(s.width.slice(0, -1)) + 10 + '%';
+            setTimeout(fade, 40);
+        }
+    })();
+}
 
 window.onload = async () => {
     let provider = null;
@@ -43,27 +57,37 @@ window.onload = async () => {
     // metamask_connect_btn.style.display = 'block';
     metamask_connect_btn.onclick = async () => {
         if(window.location.host == 'bitpow.org'){
-            await ethereum.request({
-                method: 'wallet_addEthereumChain',
-                params: [{
-                    chainId: CHAIN_ID,
-                    chainName: CHAIN_NAME,
-                    nativeCurrency: {
-                        name: TOKEN_NAME,
-                        symbol: TOKEN_SYMBOL, // 2-6 characters long
-                        decimals: 18
-                    },
-                    rpcUrls: [RPC_URL],
-                    // blockExplorerUrls: 'https://bitfile.org/scan'
-                    //iconUrls?: string[]; // Currently ignored.
-                }]
-            });
+            try {
+                await ethereum.request({
+                    method: 'wallet_addEthereumChain',
+                    params: [{
+                        chainId: CHAIN_ID,
+                        chainName: CHAIN_NAME,
+                        nativeCurrency: {
+                            name: TOKEN_NAME,
+                            symbol: TOKEN_SYMBOL, // 2-6 characters long
+                            decimals: 18
+                        },
+                        rpcUrls: [RPC_URL],
+                        // blockExplorerUrls: 'https://bitfile.org/scan'
+                        //iconUrls?: string[]; // Currently ignored.
+                    }]
+                });
+            } catch (error) {
+                // you may need to disable other extension before use Metamask
+                help_extension();
+            }
         }
 
-        await ethereum.request({
-            method: 'wallet_switchEthereumChain',
-            params: [{ chainId: CHAIN_ID }],
-        });
+        try {
+            await ethereum.request({
+                method: 'wallet_switchEthereumChain',
+                params: [{ chainId: CHAIN_ID }],
+            });
+        } catch (error) {
+            // you may need to disable other extension before use Metamask
+            help_extension();
+        }
 
         const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
         console.log(accounts);
@@ -138,14 +162,19 @@ window.onload = async () => {
     };
 
     get_u.onclick = async (evt) => {
-        const to_address = ethereum.selectedAddress;
-        console.log(to_address);
-        console.log(signer);
-        const U = new ethers.Contract(conf['U'], U_abi, signer);
+        try {
+            const to_address = ethereum.selectedAddress;
+            console.log(to_address);
+            console.log(signer);
+            const U = new ethers.Contract(conf['U'], U_abi, signer);
 
-        const tx = await U['mint(address,uint256)'](to_address, ethers.BigNumber.from(10).pow(20));
-        console.log(tx);
-        alert(`U sent to ${to_address}`);
+            const tx = await U['mint(address,uint256)'](to_address, ethers.BigNumber.from(10).pow(20));
+            console.log(tx);
+            alert(`U sent to ${to_address}`);
+        } catch (error) {
+            // you may need to disable other extension before use Metamask
+            // you may need to manually add and switch to network 3335
+        }
     };
 
 };

@@ -25,30 +25,39 @@
             <div class="btn-group">
                 <div class="connect-btn">
                     <input class="custom-btn" type="button" value="Connect MetaMask" id="metamask_connect">
-                    <div style="color: rgb(60, 168, 78); font-size: 8px;" id="eth_account">Not connected</div>
+                    <div style="color: rgb(60, 168, 78); font-size: 10px;" id="eth_account">Not connected</div>
+
                 </div>
                 <input class="custom-btn" type="button" value="Add Contract" id="add_contract">
                 <input class="custom-btn" type="button" value="Get Test U" id="get_u">
                 <br><br><br><br>
                 <a href="/index.html">[ Back to the Test App ]</a>
             </div>
+
+            <div style="display: none; position: relative; left: 150px;" id="help_extension">
+                If Metamask not working, check if other chrome extension<br>
+                prevents Metamask launching:<br>
+                Consider to disable them (perferred),<br>
+                or manually add our custom network.<br>
+                <br>
+                <code>
+                    Network Name: BitPoW testnet<br>
+                    RPC URL: https://bitfile.org<br>
+                    Chain ID: 3335<br>
+                    Currency Symbol: POW<br>
+                    Currency Name: PoW
+                </code>
+                <br><br>
+
+                <img src="/images/open_extension_manager.png"><br>
+                <img src="/images/manage_extension.png"><br>
+            </div>
+
         </section>
 
-<!--     <div>
-      <input type="button" value="连接 MetaMask" class="metamask_connect" />
-    </div>
-  
-    <div>
-      MetaMask 账号:
-      <div id='eth_accounts'></div>
-    </div>
-    <br>
+        <section>
+        </section>
 
-    <div>
-      <input class="button" type="button" value="添加测试 MKRW" id="" />
-    </div>
-    <br>
- -->
         <script type="module" src="/js/faucet.js"></script> <!-- ES6 -->
     </body>
 </html>
