@@ -1,31 +1,25 @@
 
 import { ethers } from "/dist/ethers-5.6.esm.min.js";
 
-let conf;
+let conf = {
+    "U": "0x0000000000000000000000000000000000000001"
+};
 
 const TOKEN_NAME = 'PoW';
-const TOKEN_SYMBOL = 'PoW';
+const TOKEN_SYMBOL = 'POW';
 
 let CHAIN_ID;
 let CHAIN_NAME;
 let RPC_URL;
 
 if(window.location.host == 'bitpow.org'){
-    CHAIN_ID = '0x208';
+    CHAIN_ID = '0xd07';
     CHAIN_NAME = 'PoW testnet';
     RPC_URL = 'https://bitfile.org';
-
-    conf = {
-        "U": "0x0000000000000000000000000000000000000001"
-    };
 }else{
     CHAIN_ID = '0x208';
     CHAIN_NAME = 'PoW local';
     RPC_URL = 'http://192.168.1.9:9001';
-
-    conf = {
-        "U": "0x0000000000000000000000000000000000000001"
-    };
 }
 
 
@@ -45,18 +39,23 @@ window.addEventListener('load', async () => {
 
         // metamask_connect_btn.style.display = 'block';
         metamask_connect_btn.addEventListener('click', async () => {
-            // const add_chain = await ethereum.request({ method: 'wallet_addEthereumChain', params: [{
-            //         chainId: CHAIN_ID,
-            //         chainName: CHAIN_NAME,
-            //         nativeCurrency: {
-            //         name: TOKEN_NAME,
-            //         symbol: TOKEN_SYMBOL, // 2-6 characters long
-            //         decimals: 18
-            //     },
-            //     rpcUrls: [RPC_URL]
-            //     //blockExplorerUrls?: string[];
-            //     //iconUrls?: string[]; // Currently ignored.
-            // }]});
+            if(window.location.host == 'bitpow.org'){
+                await ethereum.request({
+                    method: 'wallet_addEthereumChain',
+                    params: [{
+                        chainId: CHAIN_ID,
+                        chainName: CHAIN_NAME,
+                        nativeCurrency: {
+                            name: TOKEN_NAME,
+                            symbol: TOKEN_SYMBOL, // 2-6 characters long
+                            decimals: 18
+                        },
+                        rpcUrls: [RPC_URL],
+                        // blockExplorerUrls: 'https://bitfile.org/scan'
+                        //iconUrls?: string[]; // Currently ignored.
+                    }]
+                });
+            }
 
             await ethereum.request({
                 method: 'wallet_switchEthereumChain',
@@ -107,7 +106,7 @@ window.addEventListener('load', async () => {
         'function mint(address,uint256) public',
     ];
 
-    add_contract.addEventListener('click', async (evt) => {
+    add_contract.onclick = async (evt) => {
         // const to_address = ethereum.selectedAddress;
         await ethereum.request({
             method: 'wallet_watchAsset',
@@ -116,22 +115,22 @@ window.addEventListener('load', async () => {
                 options: {
                     address: conf['U'], // The address that the token is at.
                     symbol: 'U', // A ticker symbol or shorthand, up to 5 chars.
-                    decimals: 0, // The number of decimals in the token
+                    decimals: 18, // The number of decimals in the token
                     image: '', // A string url of the token logo
                 },
             },
         });
-    });
+    };
 
-    get_u.addEventListener('click', async (evt) => {
+    get_u.onclick = async (evt) => {
         const to_address = ethereum.selectedAddress;
         console.log(to_address);
         console.log(signer);
         const U = new ethers.Contract(conf['U'], U_abi, signer);
 
-        const tx = await U['mint(address,uint256)'](to_address, ethers.BigNumber.from(100));
+        const tx = await U['mint(address,uint256)'](to_address, ethers.BigNumber.from(10).pow(20));
         console.log(tx);
         alert(`U sent to ${to_address}`);
-    });
+    };
 
 });
