@@ -1,53 +1,73 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>BitPoW Faucet</title>
-        <style>
-            .selected {background-color: yellow;}
-            .metamask_connect {display: none;}
-        </style>
-        <link rel="stylesheet" href="/css/faucet.css">
-    </head>
-    <body>
-        <header>GET TEST TOKENS</header>
+  <head>
+    <meta charset="utf-8" />
+    <title>BitPoW Faucet</title>
+    <style>
+      .selected {background-color: yellow;}
+      .metamask_connect {display: none;}
+    </style>
+    <link rel="stylesheet" href="/css/faucet.css">
+  </head>
+  <body>
+    <header>GET TEST TOKENS</header>
 
-        <section>
-            <aside>
-                <div class="circle">1</div>
-                <div class="divider"></div>
-                <div class="circle">2</div>
-                <div class="divider"></div>
-                <div class="circle">3</div>
-                <div class="divider"></div>
-                <div class="circle">4</div>
-            </aside>
-            <div class="btn-group">
-                <div class="connect-btn">
-                    <input class="custom-btn" type="button" value="Connect MetaMask" id="metamask_connect">
-                </div>
-                <input class="custom-btn" type="button" value="Add Contract" id="add_contract">
-                <input class="custom-btn" type="button" value="Get Test U" id="get_u">
-                <br><br><br><br>
-                <a href="/index.html">[ Back to the Test App ]</a>
-            </div>
-        </section>
+    <section>
+      <aside>
+        <div class="circle">1</div>
+        <div class="divider"></div>
+        <div class="circle">2</div>
+        <div class="divider"></div>
+        <div class="circle">3</div>
+        <div class="divider"></div>
+        <div class="circle">4</div>
+      </aside>
+      <div class="btn-group">
+        <div class="connect-btn">
+          <input class="custom-btn" type="button" value="Connect MetaMask" id="metamask_connect">
+          <div style="color: rgb(60, 168, 78); font-size: 10px;" id="eth_account">Not connected</div>
+        </div>
 
-<!--     <div>
-      <input type="button" value="连接 MetaMask" class="metamask_connect" />
-    </div>
-  
-    <div>
-      MetaMask 账号:
-      <div id='eth_accounts'></div>
-    </div>
-    <br>
+        <input class="custom-btn" type="button" value="Add Contract" id="add_contract">
+        <input class="custom-btn" type="button" value="Get Test U" id="get_u">
+        <br><br><br><br>
+        <a href="/index.html">[ Back to the Test App ]</a>
+      </div>
 
-    <div>
-      <input class="button" type="button" value="添加测试 MKRW" id="" />
-    </div>
-    <br>
- -->
-        <script type="module" src="/js/faucet.js"></script> <!-- ES6 -->
-    </body>
+      <div style="display: none; position: relative; left: 150px;" id="help_extension">
+        If Metamask is not working, check if other chrome extensions<br>
+        prevent Metamask launching:<br>
+        Consider to disable them (perferred),<br>
+        or manually add our custom network.<br>
+        <br>
+        <code>
+            Network Name: BitPoW testnet<br>
+            RPC URL: https://bitfile.org<br>
+            Chain ID: 3335<br>
+            Currency Symbol: POW<br>
+            Currency Name: PoW
+        </code>
+        <br><br>
+
+        <img src="/images/open_extension_manager.png"><br>
+        <img src="/images/manage_extension.png"><br>
+      </div>
+
+    </section>
+
+    <section>
+    </section>
+
+  </body>
+  <script type="module" src="/js/faucet.js"></script> <!-- ES6 -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LJJB5VJRC6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LJJB5VJRC6');
+  </script>
 </html>
