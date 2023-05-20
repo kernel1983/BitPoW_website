@@ -1,158 +1,155 @@
 <!DOCTYPE html>
-<html style="background-color: #020a22;">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BitPoW</title>
-    <link rel="stylesheet" href="/css/bulma.min.css">
-  </head>
-  <style>
-    @media screen and (max-width: 1023px){
-      .navbar-menu {
-        background-color: #c0d1c6;
-      }
-      .navbar-item,.navbar-link {
-        color: rgb(48, 22, 22);
-      }
+<html style="background-color: #ffffff;">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BitPoW</title>
+  <link rel="stylesheet" href="/css/bulma.min.css">
+</head>
+<style>
+  @media screen and (max-width: 1023px) {
+    .navbar-menu {
+      background-color: #ffffff;
     }
-  </style>
-  <body style="background-repeat:no-repeat; background-image:url(/images/bg1.png); background-size: 492px 202px; ">
 
-    <div style="background: linear-gradient(180deg, rgba(2,10,34,0) 0%, rgba(50,81,137,0.25) 100%);">
-      <nav class="navbar" role="navigation" aria-label="main navigation" style="height: 36px; max-width: 1380px; margin: auto; color: white; background-color: transparent;">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="https://bitpow.org">
-            <!-- <img src="/images/logo.png" width="112" height="28"> -->
-          </a>
+    .navbar-item,
+    .navbar-link {
+      color: rgb(48, 22, 22);
+    }
+  }
 
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar_menu" id="navbar_burger">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
+  .navbar-item,
+  .navbar-link {
+    color: #000000;
+  }
 
-        <div id="navbar_menu" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item" href="https://bitpow.org">
-              Home
-            </a>
+  .navbar-item:hover,
+  .navbar-link:hover {
+    color: hsl(171, 100%, 41%) !important;
+  }
 
-            <a class="navbar-item" href="https://eprint.iacr.org/2020/1117">
-              Economic Proof of Work
-            </a>
+  .navbar-link:not(.is-arrowless)::after {
+    border-color: hsl(171, 100%, 41%);
+  }
+</style>
 
-            <a class="navbar-item" href="https://arxiv.org/abs/2207.01978">
-              Wider Sharding
-            </a>
+<body style="font-style: italic;">
 
-            <a class="navbar-item" href="https://docsend.com/view/iyujimcvadwuhgae">
-              Reduce Cost
-            </a>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <!-- logo -->
+      <div style="width: 112px; height: 28px;"></div>
+      <!-- <a class=" navbar-item" href="https://bulma.io">
+        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+        </a> -->
 
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                Links
-              </a>
-
-              <div class="navbar-dropdown">
-                <a class="navbar-item" href="https://github.com/EcoPoW/BitPoW">
-                  Github
-                </a>
-                <hr class="navbar-divider">
-
-                <a class="navbar-item" href="https://twitter.com/BitPoW2023">
-                  BitPoW Twitter
-                </a>
-                <a class="navbar-item" href="https://github.com/EcoPoW2020">
-                  EcoPoW Twitter
-                </a>
-                <!-- <a class="navbar-item" href="/faucet.html">
-                  Test Faucet
-                </a> -->
-                <hr class="navbar-divider">
-                <!-- <a class="navbar-item">
-                  Team
-                </a> -->
-                <a class="navbar-item" href="https://t.me/+tn744qPPVuthMDQ9">
-                  Telegram
-                </a>
-                <a class="navbar-item" href="https://discord.gg/u45dV2S8R5">
-                  Discord
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <!-- <a class="button is-primary">
-                  <strong>Connect</strong>
-                </a> -->
-                <!-- <a class="button is-light">
-                  Log in
-                </a> -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <a role="button" class="navbar-burger" id="navbar_burger" aria-label="menu" aria-expanded="false"
+        data-target="navbar_menu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
 
-    <section class="section">
-      <div class="container">
-        <!-- <img src="/images/coming_soon_animated.gif" style="position:fixed; right: 10px; top:250px; z-index: 5;" /> -->
-        <br>
-        <br>
-        <br>
-        <h1 class="title" style="color: #fff0ff; z-index: 10; position: relative;">
-          BitPoW
-        </h1>
-        <p class="subtitle" style=" z-index: 10; position: relative;">
-          Testnet Coming Soon
-        </p>
-        
-        <a href="https://t.me/+tn744qPPVuthMDQ9"><input value="Telegram" type="button" style="width: 120px; height: 50px; line-height: 40px;
-          background: linear-gradient(127deg, #135EF6 0%, #71FFD6 100%); color: white;  z-index: 10; position: relative;
-           clip-path: polygon( 0 35%, 15% 0, 100% 0, 100% 65%, 85% 100%, 0 100%  ); border: none;" /></a>
-        <br>
-        <br>
- 
-        <!-- <a href="https://discord.gg/u45dV2S8R5"><input value="Discord" type="button" style="width: 120px; height: 50px; line-height: 40px;
-         background: linear-gradient(127deg, #135EF6 0%, #71FFD6 100%); color: white;  z-index: 10; position: relative;
-          clip-path: polygon( 0 35%, 15% 0, 100% 0, 100% 65%, 85% 100%, 0 100%  ); border: none;" /></a> -->
+    <div id="navbar_menu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="https://bitpow.org">
+          Home
+        </a>
 
-        <br>
-        <br>
-        <br>
-        <br>
+        <a class="navbar-item" href="https://eprint.iacr.org/2020/1117" target="_blank">
+          Economic Proof of Work
+        </a>
+
+        <a class="navbar-item" href="https://arxiv.org/abs/2207.01978" target="_blank">
+          Wider Sharding
+        </a>
+
+        <a class="navbar-item" href="https://docsend.com/view/iyujimcvadwuhgae" target="_blank">
+          Reduce Cost
+        </a>
+
+        <a class="navbar-item" href="https://t.me/+tn744qPPVuthMDQ9" target="_blank">
+          Telegram
+        </a>
+
+        <a class="navbar-item" href="https://discord.gg/u45dV2S8R5" target="_blank">
+          Discord
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Links
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://github.com/EcoPoW/BitPoW" target="_blank">
+              Github
+            </a>
+            <hr class="navbar-divider">
+
+            <a class="navbar-item" href="https://twitter.com/BitPoW2023" target="_blank">
+              BitPoW Twitter
+            </a>
+            <a class="navbar-item" href="https://github.com/EcoPoW2020" target="_blank">
+              EcoPoW Twitter
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" style="pointer-events: none; opacity: 0.5;">
+              <strong>Connect</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div style="display: flex; justify-content: center; align-items: center; padding-top: 120px;">
+      <h1 style="font-size: 45px; font-weight: 700;">BitPoW</h1>
+    </div>
+
+    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 2.5rem;">
+      <div style="font-size: 1.25rem; text-align: center;">
         <p>We aim to build a blockchain with the first useful PoW.</p>
         <p>Uniquely, the useful PoW has almost no change to the Nakamoto Consensus.</p>
         <p>The storage network will replace the native coins as the engine for the computation.</p>
         <p>The end users will get benifit from the upgraded consensus engine with low gas fee.</p>
-        <br>
         <p>Meanwhile, sharding solves the capacity issue.</p>
         <p>Decentralization is the reason we are here.</p>
         <p>Say goodbye to the mining pools.</p>
-        <br>
-        <p>Let's make PoW great again!</p>
-        <br>
-        <br>
-        <br>
+        <p style="margin-top: 10px; font-weight: 700; color: hsl(171, 100%, 41%);">Let's make PoW great again!</p>
       </div>
-    </section>
-  </body>
-  <script type="module" src="/js/index.js"></script> <!-- ES6 -->
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LJJB5VJRC6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    </div>
 
-    gtag('config', 'G-LJJB5VJRC6');
-  </script>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <div class="buttons">
+        <a class="button is-primary"
+          style="pointer-events: none; opacity: 0.5; font-weight: 500; font-size: 1rem; line-height: 1.5rem; height: 3rem;">
+          <strong>Testnet Coming Soon</strong>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script type="module" src="/js/index.js"></script> <!-- ES6 -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJJB5VJRC6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-LJJB5VJRC6');
+</script>
 
 </html>
