@@ -54,19 +54,21 @@
 
     <div id="navbar_menu" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="https://bitpow.org">
+        <a class="navbar-item i18n" data-i18n="Home" href="https://bitpow.org">
           Home
         </a>
 
-        <a class="navbar-item" href="https://eprint.iacr.org/2020/1117" target="_blank">
+        <a class="navbar-item i18n" data-i18n="Economic Proof of Work" href="https://eprint.iacr.org/2020/1117"
+          target="_blank">
           Economic Proof of Work
         </a>
 
-        <a class="navbar-item" href="https://arxiv.org/abs/2207.01978" target="_blank">
+        <a class="navbar-item i18n" data-i18n="Wider Sharding" href="https://arxiv.org/abs/2207.01978" target="_blank">
           Wider Sharding
         </a>
 
-        <a class="navbar-item" href="https://docsend.com/view/iyujimcvadwuhgae" target="_blank">
+        <a class="navbar-item i18n" data-i18n="Reduce Cost" href="https://docsend.com/view/iyujimcvadwuhgae"
+          target="_blank">
           Reduce Cost
         </a>
 
@@ -79,7 +81,7 @@
         </a>
 
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
+          <a class="navbar-link i18n" data-i18n="Links">
             Links
           </a>
 
@@ -102,6 +104,9 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
+            <a id="langSwitch" class="button is-light">
+              <strong id="langSwitchText">English</strong>
+            </a>
             <a class="button is-primary" style="pointer-events: none; opacity: 0.5;">
               <strong>Connect</strong>
             </a>
@@ -118,14 +123,18 @@
 
     <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 2.5rem;">
       <div style="font-size: 1.25rem; text-align: center;">
-        <p>We aim to build a blockchain with the first useful PoW.</p>
-        <p>Uniquely, the useful PoW has almost no change to the Nakamoto Consensus.</p>
-        <p>The storage network will replace the native coins as the engine for the computation.</p>
-        <p>The end users will get benifit from the upgraded consensus engine with low gas fee.</p>
-        <p>Meanwhile, sharding solves the capacity issue.</p>
-        <p>Decentralization is the reason we are here.</p>
-        <p>Say goodbye to the mining pools.</p>
-        <p style="margin-top: 10px; font-weight: 700; color: hsl(171, 100%, 41%);">Let's make PoW great again!</p>
+        <p class="i18n" data-i18n="We aim">We aim to build a blockchain with the first useful PoW.</p>
+        <p class="i18n" data-i18n="Uniquely">Uniquely, the useful PoW has almost no change to the Nakamoto Consensus.
+        </p>
+        <p class="i18n" data-i18n="The storage network">The storage network will replace the native coins as the engine
+          for the computation.</p>
+        <p class="i18n" data-i18n="The end users">The end users will get benifit from the upgraded consensus engine with
+          low gas fee.</p>
+        <p class="i18n" data-i18n="sharding">Meanwhile, sharding solves the capacity issue.</p>
+        <p class="i18n" data-i18n="Decentralization">Decentralization is the reason we are here.</p>
+        <p class="i18n" data-i18n="Say goodbye">Say goodbye to the mining pools.</p>
+        <p class="i18n" data-i18n="great again" style="margin-top: 10px; font-weight: 700; color: hsl(171, 100%, 41%);">
+          Let's make PoW great again!</p>
       </div>
     </div>
 
@@ -133,13 +142,14 @@
       <div class="buttons">
         <a class="button is-primary"
           style="pointer-events: none; opacity: 0.5; font-weight: 500; font-size: 1rem; line-height: 1.5rem; height: 3rem;">
-          <strong>Testnet Coming Soon</strong>
+          <strong class="i18n" data-i18n="Testnet Coming Soon">Testnet Coming Soon</strong>
         </a>
       </div>
     </div>
   </div>
 
 </body>
+<script src="https://unpkg.com/i18next@22.5.0/dist/umd/i18next.min.js"></script>
 <script type="module" src="/js/index.js"></script> <!-- ES6 -->
 
 <!-- Google tag (gtag.js) -->
