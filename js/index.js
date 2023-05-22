@@ -1,6 +1,6 @@
 
 import { ethers } from "/dist/ethers-5.6.esm.min.js";
-
+import translations from './translations.js';
 
 const CHAIN_ID = '0x208';
 const CHAIN_NAME = 'PoW test';
@@ -21,8 +21,8 @@ const content_sig_btn = document.getElementById('content_sig_btn');
 window.onload = async () => {
     if (typeof window.ethereum !== 'undefined') {
         console.log('MetaMask is installed!');
-        if(window.ethereum.isConnected()){
-        }else{
+        if (window.ethereum.isConnected()) {
+        } else {
             const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
         }
 
@@ -117,11 +117,44 @@ window.onload = async () => {
     navbar_burger.addEventListener('click', async () => {
 
         console.log(navbar_menu.style.display);
-        if(navbar_menu.style.display == ''){
+        if (navbar_menu.style.display == '') {
             navbar_menu.style.display = 'block';
-        }else{
+        } else {
             navbar_menu.style.display = '';
         }
     });
 }
 
+const savedLang = localStorage.getItem('lang') || 'en';
+
+i18next.init({
+    lng: savedLang,
+    resources: translations,
+}).then(() => {
+    updateTranslations();
+});
+
+const updateTranslations = () => {
+    const elements = document.querySelectorAll('.i18n');
+    console.log(elements.innerText)
+    elements.forEach((element) => {
+        const key = element.getAttribute('data-i18n');
+        const translation = i18next.t(key);
+        element.innerText = translation;
+    });
+}
+
+document.getElementById('langSwitchText').innerText = savedLang === 'en' ? 'English' : '中文';
+
+document.getElementById('langSwitch').addEventListener('click', function () {
+    const currentLang = window.i18next.language;
+
+    const newLang = currentLang === 'en' ? 'zh' : 'en';
+
+    document.getElementById('langSwitchText').innerText = newLang === 'en' ? 'English' : '中文';
+
+    window.i18next.changeLanguage(newLang).then(() => {
+        updateTranslations();
+        localStorage.setItem('lang', newLang);
+    });
+});
