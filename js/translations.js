@@ -20,19 +20,19 @@ const translations = {
     zh: {
         translation: {
             'Home': '首页',
-            'Economic Proof of Work': '经济工作量证明',
-            'Wider Sharding': '更广泛的分片',
-            'Reduce Cost': '降低成本',
+            'Economic Proof of Work': '经济的工作量证明',
+            'Wider Sharding': 'Wider 分片',
+            'Reduce Cost': '降低最终用户成本',
             'Links': '链接',
             'Testnet Coming Soon': '测试网即将开放',
-            'We aim': '我们的目标是构建第一个有用的工作量证明区块链。',
-            'Uniquely': '独特的是，有用的PoW几乎没有改变中本聪共识。',
-            'The storage network': '存储网络将取代本地货币成为计算引擎。',
-            'The end users': '最终用户将从升级的共识引擎和低燃气费中受益。',
+            'We aim': '我们的目标是创建基于有用的工作量证明的区块链基础设施。',
+            'Uniquely': '独特的是，有用的 PoW 几乎没有改变中本聪共识。',
+            'The storage network': '区块链存储网络将取代原生 coin 成为新的安全引擎。',
+            'The end users': '最终用户将从升级的共识引擎受益，享受超低的链上交互gas费。',
             'sharding': '同时，分片解决了容量问题。',
-            'Decentralization': '去中心化是我的根本所在',
-            'Say goodbye': '告别矿池',
-            'great again': "让PoW再次伟大！"
+            'Decentralization': '去中心化是 crypto 与 web2 的根本区别。',
+            'Say goodbye': '有用的PoW让我们告别矿池，拥抱真正的去中心化。',
+            'great again': "我们的使命是，让PoW再次伟大！"
         },
     },
 };
