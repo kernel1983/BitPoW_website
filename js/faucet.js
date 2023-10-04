@@ -12,13 +12,13 @@ let CHAIN_ID;
 let CHAIN_NAME;
 let RPC_URL;
 
-if(window.location.host == 'bitpow.org'){
+if(window.location.hostname == 'bitpow.org'){
     CHAIN_ID = '0xd07';
-    CHAIN_NAME = 'PoW testnet';
-    RPC_URL = 'https://bitfile.org';
+    CHAIN_NAME = 'BitPoW testnet1';
+    RPC_URL = 'https://testnet1.bitpow.org';
 }else{
     CHAIN_ID = '0x208';
-    CHAIN_NAME = 'PoW local';
+    CHAIN_NAME = 'BitPoW local';
     RPC_URL = 'http://192.168.1.9:9001';
 }
 
@@ -56,7 +56,7 @@ window.onload = async () => {
 
     // metamask_connect_btn.style.display = 'block';
     metamask_connect_btn.onclick = async () => {
-        if(window.location.host == 'bitpow.org'){
+        if(window.location.hostname == 'bitpow.org'){
             try {
                 await ethereum.request({
                     method: 'wallet_addEthereumChain',
@@ -69,7 +69,7 @@ window.onload = async () => {
                             decimals: 18
                         },
                         rpcUrls: [RPC_URL],
-                        // blockExplorerUrls: 'https://bitfile.org/scan'
+                        // blockExplorerUrls: 'https://testnet1.bitpow.org/scan'
                         //iconUrls?: string[]; // Currently ignored.
                     }]
                 });
@@ -134,7 +134,7 @@ window.onload = async () => {
     });
 
     // let provider2;
-    // if(window.location.host == 'bitpow.org'){
+    // if(window.location.hostname == 'bitpow.org'){
     //     provider2 = new ethers.providers.WebSocketProvider ('ws://192.168.1.9:8546');
     // }else{
     //     provider2 = new ethers.providers.JsonRpcProvider(RPC_URL);
